@@ -1,27 +1,27 @@
-import scr.server as server
+import server as server
 import mcpi.minecraft as minecraft
 from mcpi.vec3 import Vec3 as Vec3
 
-import scr.scripts.bunker as bunker
-from scr.maze import MakeMaze as maze
+import scripts.bunker as bunker
+from maze import MakeMaze as maze
 
 #scripts
 #make world flat
-import scr.scripts.flatworld as flatworld
+import scripts.flatworld as flatworld
 #make rails
-import scr.scripts.railgen as rails
+import scripts.railgen as rails
 
-import scr.scripts.ejectcd as eject
+import scripts.ejectcd as eject
 
-import scr.mazeGame as game
+import mazeGame as game
 
-import scr.movePlayer as jamm
+import movePlayer as jamm
 
-import scr.cristallBall as ball
+import cristallBall as ball
 
-import scr.magic as mblock
+import magic as mblock
 
-import scr.minheap as minheap
+import minheap as minheap
 mc = minecraft.Minecraft.create(server.address)
 ppos = mc.player.getPos();
 #mc.postToChat("hello")
