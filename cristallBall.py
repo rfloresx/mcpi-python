@@ -19,3 +19,16 @@ def createHolloSphere(mc,blocktype):
 def playerBall(mc):
     while True:
         createHolloSphere(mc,block.GLASS)
+        
+if __name__ == "__main__":
+    RUNTIME = 10
+    import mcpi.minecraft as minecraft
+    import server
+    import time
+    mc = minecraft.Minecraft.create(server.address)
+    stime = time.time()
+    while stime + RUNTIME > time.time():
+        createHolloSphere(mc,block.GLASS)
+    
+    
+    

@@ -32,9 +32,6 @@ def moveDown(player):
     pos = player.getPos()
     player.setPos(pos.x, pos.y-1, pos.z)
     
-    
-    
-    
 def jampPlayer(player,t):
     mt = time.time()
     while time.time() <= mt + t:
@@ -52,7 +49,6 @@ def jampPlayer(player,t):
         if dir == 5:
             moveDown(player)
         time.sleep(.2)
-
 
 def lauchPlayer(player, dir = Vec3(0,0,0)):
     pos = player.getPos()

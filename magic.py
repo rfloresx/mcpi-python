@@ -37,3 +37,21 @@ def movableBlock(mc,pos1):
         swapBlock(mc,pos1,pos2)
         pos1 = pos2
         #time.sleep(1)
+        
+if __name__ == "__main__":
+    RUNTIME = 10
+    import mcpi.minecraft as minecraft
+    import server
+    import time
+    mc = minecraft.Minecraft.create(server.address)
+    stime = time.time()
+    pos1 = mc.player.getPos()
+    pos1.y -= 1
+    mc.setBlock(pos1.x, pos1.y, pos1.z, block.NETHER_REACTOR_CORE)
+    while time.time() < stime + RUNTIME:
+        pos2 = makeNextPos(pos1)
+        swapBlock(mc,pos1,pos2)
+        pos1 = pos2
+    
+    
+    

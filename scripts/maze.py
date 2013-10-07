@@ -1,6 +1,6 @@
 # Quick rough & ready maze generator for Minecraft Pi edition.
 # Dave Finch 2013
-import scr.server as server
+import server as server
 import mcpi.minecraft as minecraft
 import mcpi.block as block
 import sys, random

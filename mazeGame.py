@@ -295,4 +295,9 @@ class mazeGame:
             
             
             
-            
+if __name__ == "__main__":
+    import server
+    server.mc.player.setPos(1,0,1)
+    mazeGame(server.mc,Vec3(0,0,0)).mazeGame()
+    
+    

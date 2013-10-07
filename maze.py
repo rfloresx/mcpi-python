@@ -137,3 +137,12 @@ class MakeMaze:
                         if self.maze[x][y] == 3: self.maze[x][y] = 1
         print "maze is done"
         
+        
+        
+if __name__ == "__main__":
+    import server
+    mc = server.mc
+    MakeMaze(mc).makeMaze()
+    
+    
+    

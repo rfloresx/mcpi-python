@@ -127,3 +127,11 @@ class blockArray:
         self.mc.setBlock(pos.x, pos.y, pos.z, block.AIR)
         return d
         
+        
+        
+if __name__ == "__main__":
+    import server
+    mc = server.mc
+    pos = mc.player.getPos()
+    pos.y += 5
+    runSort(mc,pos,50)
