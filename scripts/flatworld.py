@@ -7,3 +7,6 @@ def flatworld(mc):
     mc.setBlocks(-128,0,-128,128,64,128,0)
     mc.setBlocks(-128,0,-128,128,-64,128,block.DIRT.id)
     print "Done"
+if __name__ == "__main__":
+    import server
+    flatworld(server.mc)

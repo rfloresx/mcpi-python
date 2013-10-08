@@ -97,3 +97,8 @@ def makebunker(mc, x1 = 0, y1 = 0, z1 = 0):
     mc.setBlock(x1-10,y1-60,z1,64,4)
     mc.setBlock(x1-10,y1-59,z1,64,8)
     mc.setBlock(x1-10,y1-58,z1,1)
+    
+if __name__ == "__main__":
+    import server
+    pos = server.mc.player.getPos()
+    makebunker(server.mc,pos.x,pos.y,pos.z)

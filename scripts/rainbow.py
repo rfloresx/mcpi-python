@@ -16,3 +16,7 @@ def rainbow(mc):
             for colourindex in range(0, len(colors)):
                     y = sin((x / 128.0) * pi) * height + colourindex
                     mc.setBlock(x - 64, int(y), 0, block.WOOL.id, colors[len(colors) - 1 - colourindex])
+                    
+if __name__ == "__main__":
+    import server
+    rainbow(server.mc)

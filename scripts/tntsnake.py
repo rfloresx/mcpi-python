@@ -117,3 +117,7 @@ def tntsnake(mc):
             duration -= 1
             print "Going %s for %s more cycles" % (directions[direction],duration)
 
+
+if __name__ == "__main__":
+    import server
+    tntsnake(server.mc)

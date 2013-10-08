@@ -35,3 +35,8 @@ def drawBuilding(mc, locx, locy, locz, floors, width, depth, floorheight, wallma
             for j in range( floorheight-1 ):
                 mc.setBlocks( locx+depth, windowYloc+j , locz+1, locx+depth, windowYloc+j, locz+(width-1), block.GLASS_PANE )
 
+if __name__ == "__main__":
+    import server
+    pos = server.mc.player.getPos()
+    pos.y -= 1
+    drawBuilding(server.mc, pos.x,pos.y,pos.z+5, 10, 10, 10, 5, block.BRICK_BLOCK, block.WOOD)

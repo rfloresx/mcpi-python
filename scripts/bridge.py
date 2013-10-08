@@ -60,3 +60,7 @@ def bridge(mc):
 
             #Delay
         time.sleep(0.01)
+        
+if __name__ == "__main__":
+    import server
+    bridge(server.mc)

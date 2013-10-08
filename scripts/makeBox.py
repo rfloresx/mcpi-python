@@ -233,3 +233,7 @@ def makeBox(mc):
     
         length += 1
         height = 0 
+        
+if __name__ == "__main__":
+    import server
+    makeBox(server.mc)

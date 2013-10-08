@@ -16,3 +16,7 @@ def ejectcd(mc):
         if len(hits) > 0:
             mc.postToChat("you have hit: "+len(hits))
         time.sleep(0.1)
+        
+if __name__ == "__main__":
+    import server
+    ejectcd(server.mc)

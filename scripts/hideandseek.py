@@ -80,3 +80,8 @@ def hideandseek(mc):
     time.sleep(5)
   
     mc.postToChat("www.stuffaboutcode.com")
+    
+if __name__ == "__main__":
+    import server
+    hideandseek(server.mc)
+    

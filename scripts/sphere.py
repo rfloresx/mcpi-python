@@ -19,3 +19,7 @@ def sphere(mc):
 			for z in range(radius*-1,radius):
 				if x**2 + y**2 + z**2 < radius**2:
 					mc.setBlock(playerPos.x + x, playerPos.y + y + radius, playerPos.z - z - 10, block.GOLD_BLOCK)
+
+if __name__ == "__main__":
+	import server
+	sphere(server.mc)

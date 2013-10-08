@@ -74,3 +74,7 @@ def basics(mc):
     time.sleep(5)
 
     mc.postToChat("www.stuffaboutcode.com")
+    
+if __name__ == "__main__":
+    import server
+    basics(server.mc)

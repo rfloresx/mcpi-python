@@ -6,8 +6,15 @@ import mcpi.block as block
     a stone floor at -1y
     @author: goldfish"""
 
-def clearZone(mc, alocx, alocz, blocx, blocz ):
-    mc.setBlocks( alocx, 0, alocz, blocx, 64, blocz, block.AIR )
-    mc.setBlocks( alocx, -1, alocz, blocx, -1, blocz, block.STONE )
+def clearZone(mc,pos,size ):
+    mc.setBlocks( pos.x, pos.y, pos.z, pos.x+size.x, pos.y+size.y, pos.z+size.z, block.AIR )
+    #mc.setBlocks( pos.x, -1, alocz, blocx, -1, blocz, block.STONE )
 
-
+if __name__ == "__main__":
+    from mcpi.vec3 import Vec3
+    import server
+    pos = server.mc.player.getPos()
+    size = Vec3(50,5,50)
+    pos.x -= size.x/2
+    pos.z -= size.z/2
+    clearZone(server.mc, pos, size)

@@ -165,3 +165,7 @@ def digitalclock(client):
             output_digit(client, place, digit_offset, map) # Draw the digit.
             digit_offset += 1 # Next digit.
         time.sleep(0.5) # Rest a while before drawing again.
+        
+if __name__ == "__main__":
+    import server
+    digitalclock(server.mc)

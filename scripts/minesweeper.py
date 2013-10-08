@@ -4,7 +4,7 @@ import sys
 import random
 import threading
 import mcpi.minecraft as minecraft
-import scr.server as server
+import server as server
 defaultDifficulty = 0.1
 setDifficulty = defaultDifficulty
 
