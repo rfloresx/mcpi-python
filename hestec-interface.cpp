@@ -1,4 +1,3 @@
-
 /**
  *	Name:	Casey Richardson
  *	SID: 	20056054
@@ -10,6 +9,7 @@
 #include <fstream>
 #include <cstdlib>
 #include <vector>
+#include <string>
 
 using namespace std;
 
@@ -17,7 +17,7 @@ string csubstr(string &input, int begin, int end)
 {
 	if(end <= input.length())
 	{
-		char sub[end - begin];
+		char * sub = new char[end - begin];
 
 		for(int j = begin, k = 0; j <= end; j++, k++)
 		{
@@ -122,7 +122,7 @@ int main(int argc, char **argv)
 	string input;
 	string exitStr("exit");
 
-	system("clear");
+	system("cls");
 
 	cout << "<======= + + + + HESTEC + + + + =======>" << endl << endl;
 	cout << "          HESTEC 2013 Interface         " << endl << endl;
@@ -134,7 +134,8 @@ int main(int argc, char **argv)
 		getline(cin, input);
 
 		vector<string> command = tokenizeCommand(input);
-        
+		if(command.empty())
+			continue;
 		if(isCommand(command[0]))
 		{
 			if(cstrcmp(command[0], exitStr))
