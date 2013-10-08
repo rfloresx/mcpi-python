@@ -13,6 +13,17 @@
 
 using namespace std;
 
+string operatingSystem()
+{
+	#if defined (WIN32)
+	return "WIN";
+	#elif defined (__APPLE__)
+	return "APPLE";
+	#elif defined (__linux__)
+	return "LINUX";
+	#endif
+}
+
 string csubstr(string &input, int begin, int end)
 {
 	if(end <= input.length())
@@ -37,7 +48,7 @@ string csubstr(string &input, int begin, int end)
 	}
 }
 
-bool cstrcmp(string &input1, string &input2)
+bool cstrcmp(string input1, string input2)
 {
 	if(input1.length() != input2.length())
 	{
@@ -117,12 +128,27 @@ bool commandExists(string &command)
 	return inputFile;
 }
 
+string buildParamString(const vector<string> &params)
+{
+	string paramString;
+
+	for(int i = 1; i < params.size(); i++)
+	{
+		paramString += params[i] + " ";
+	}
+
+	return paramString;
+}
+
 int main(int argc, char **argv)
 {
 	string input;
 	string exitStr("exit");
 
-	system("cls");
+	if(cstrcmp(operatingSystem(), "WIN"))
+		system("cls");
+	else if(cstrcmp(operatingSystem(), "APPLE") || cstrcmp(operatingSystem(), "LINUX"))
+		system("clear");
 
 	cout << "<======= + + + + HESTEC + + + + =======>" << endl << endl;
 	cout << "          HESTEC 2013 Interface         " << endl << endl;
@@ -146,7 +172,8 @@ int main(int argc, char **argv)
 			{
 				if(commandExists(command[0]))
 				{
-					system(("python " + command[0] + ".py").c_str());
+					//system(("python " + command[0] + ".py " + buildParamString(command)).c_str());
+					cout << ("python " + command[0] + ".py " + buildParamString(command)) << endl;
 				}
 				else
 				{
