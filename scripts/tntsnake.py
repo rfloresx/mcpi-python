@@ -31,10 +31,11 @@ def new_direction(old_direction):
     return direction
 
 def tntsnake(mc):
-    mc.setBlocks(-10,-10,-10,10,100,10,block.AIR)
-    x = 0.0
-    y = 0.0
-    z = 0.0
+    #mc.setBlocks(-10,-10,-10,10,100,10,block.AIR)
+    p = mc.player.getPos()
+    x = p.x
+    y = p.y
+    z = p.z
     max_x = 50
     max_y = 10
     max_z = 50
@@ -43,7 +44,7 @@ def tntsnake(mc):
     direction = -1
     directions = ["Forward", "Left", "Right", "Backward", "Up", "Down"]
     count = 0
-    while count < 100:
+    while count < 500:
         count = count + 1
         mc.setBlock(x, y, z, block.DIAMOND_BLOCK)
         time.sleep(2)

@@ -29,6 +29,6 @@ if __name__ == "__main__":
     stime = time.time()
     while stime + RUNTIME > time.time():
         createHolloSphere(mc,block.GLASS)
-    
+    time.sleep(RUNTIME*2)
     
     
