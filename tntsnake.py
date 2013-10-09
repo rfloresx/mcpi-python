@@ -43,16 +43,15 @@ def tntsnake(mc):
     max_distance = 100
     direction = -1
     directions = ["Forward", "Left", "Right", "Backward", "Up", "Down"]
-    count = 0
-    while count < 500:
-        count = count + 1
+    RUNTIME = 25
+    stime = time.time()
+    while stime+RUNTIME > time.time():
         mc.setBlock(x, y, z, block.DIAMOND_BLOCK)
         time.sleep(2)
 
         direction = new_direction(direction)
         duration = random.randint(min_distance, max_distance)
         print "New Roll: %s direction (%d) for %s more cycles!" % (directions[direction], direction,  duration)
-#        time.sleep(3)
         while duration > 0:
             mc.setBlock(x, y, z, block.TNT)
             if direction == 0 or direction == 3:

@@ -3,11 +3,10 @@ Created on Oct 7, 2013
 
 @author: caseybrichardson
 '''
-from mcpi.vec3 import Vec3 as Vec3
+
 import mcpi.minecraft as minecraft
 import mcpi.block as block
 import server
-import random
 import sys
 
 def clearArea(mc,spos, epos, blockClear = block.AIR.id, blockReplace = block.AIR.id, deleteAll = True):

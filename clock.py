@@ -51,7 +51,7 @@ def drawCircle(mc, x0, y0, z, radius, blockType):
 #Brensenham line algorithm
 def drawLine(mc, x, y, z, x2, y2, blockType):
     steep = 0
-    coords = []
+    #coords = []
     dx = abs(x2 - x)
     if (x2 - x) > 0: sx = 1
     else: sx = -1
@@ -65,6 +65,7 @@ def drawLine(mc, x, y, z, x2, y2, blockType):
         sx,sy = sy,sx
     d = (2 * dy) - dx
     for i in range(0,dx):
+        i = i
         if steep: mc.setBlock(y, x, z, blockType)
         else: mc.setBlock(x, y, z, blockType)
         while d >= 0:

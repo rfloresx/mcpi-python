@@ -10,10 +10,10 @@ def replaceBlocks(mc, fromBlock,toBlock):
     for x in range( -int(size.x), int(size.x)):
         for y in range(-int(size.y), int(size.y)):
             for z in range(-int(size.z),int(size.z)):
-                if mc.getBlockWithData(pos.x+x,pos.y+y,pos.z+z).id == fromBlock.id:
+                if mc.getBlockWithData(pos.x+x,pos.y+y,pos.z+z).id == fromBlock:
                     mc.setBlock(pos.x+x,pos.y+y,pos.z+z,toBlock)
                     
 if __name__ == "__main__":
     import server
     import mcpi.block as block
-    replaceBlocks(server.mc,block.DIRT, block.GLASS)
+    replaceBlocks(server.mc,block.DIRT.id, block.GLASS.id)

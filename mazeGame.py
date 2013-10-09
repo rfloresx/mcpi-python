@@ -81,7 +81,9 @@ class mazeGame:
         y = self.ppos.y - 1
         z = self.ppos.z + rand(1, self.mazeZSize - 1)
         
-        while True:
+        RUNTIME = 200;
+        stime = time.time()
+        while stime+RUNTIME > time.time():
             self.redefineWallBlock()
             self.initMaze(self.mazeXSize,self.mazeZSize)
             time.sleep(.5)
@@ -90,7 +92,7 @@ class mazeGame:
             self.markGoal(x,y,z)
             self.protectBlocksTime(self.mc.player, 10)
     
-    def infMazeGame(self):
+    def invMazeGame(self):
         p = self.ppos
         self.mc.player.setPos(Vec3(p.x + self.mazeXSize/2, p.y + self.mazeYSize + 10, p.z +self.mazeZSize/2 ) )
         time.sleep(1)
@@ -100,7 +102,9 @@ class mazeGame:
         y = self.ppos.y - 1
         z = self.ppos.z + rand(1, self.mazeZSize - 1)
         
-        while True:
+        RUNTIME = 200;
+        stime = time.time()
+        while stime+RUNTIME > time.time():
             self.redefineWallBlock() #random wall type
             self.initMaze(self.mazeXSize,self.mazeZSize) #make maze seed
             self.makeMazeNoGet() #generate maze seed

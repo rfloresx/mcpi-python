@@ -81,3 +81,4 @@ def draw_sierpinski_triangle(minecraft):
         (x, y, z) = current
         minecraft.setBlock(x, y, z, TRIANGLE_BLOCK_ID)
 
+

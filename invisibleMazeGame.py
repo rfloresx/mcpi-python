@@ -10,4 +10,4 @@ if __name__ == "__main__":
     import server
     server.mc.player.setPos(1,0,1)
     gm = game.mazeGame(server.mc,Vec3(0,0,0))
-    gm.infMazeGame()
+    gm.invMazeGame()

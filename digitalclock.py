@@ -5,7 +5,6 @@
 # http://www.raspberrypi.org/phpBB3/viewtopic.php?f=32&t=33427
 
 import mcpi.block as block
-import mcpi.minecraft as minecraft
 import time
 
 
