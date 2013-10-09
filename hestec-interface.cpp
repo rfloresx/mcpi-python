@@ -162,29 +162,13 @@ int main(int argc, char **argv)
 		vector<string> command = tokenizeCommand(input);
 		if(command.empty())
 			continue;
-		if(isCommand(command[0]))
-		{
-			if(cstrcmp(command[0], exitStr))
-			{
-				break;
-			}
-			else
-			{
-				if(commandExists(command[0]))
-				{
-					//system(("python " + command[0] + ".py " + buildParamString(command)).c_str());
-					cout << ("python " + command[0] + ".py " + buildParamString(command)) << endl;
-				}
-				else
-				{
-					cout << "Command \'" << command[0] << "\' is not yet implemented!" << endl;
-				}
-			}
-		}
+
+		if(cstrcmp(command[0], exitStr))
+			break;
+		else if(commandExists(command[0]))
+			system(("python " + command[0] + ".py " + buildParamString(command)).c_str());
 		else
-		{
 			cout << "Command not recognized!" << endl;
-		}
 	}
 
 	return 0;
